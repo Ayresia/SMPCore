@@ -1,0 +1,4 @@
+name: SMPCore
+version: '${project.version}'
+main: me.ayresia.smpcore.smpcore.SmpCore
+api-version: 1.18
