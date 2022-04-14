@@ -3,6 +3,7 @@ package me.ayresia.smpcore.smpcore.events;
 import me.ayresia.smpcore.smpcore.items.Heart;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,6 +12,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
 import static me.ayresia.smpcore.smpcore.Utils.getFormattedWeaponString;
@@ -63,6 +65,11 @@ public class PlayerListener implements Listener {
 
             event.deathMessage(Component.text(formattedDeathMessage));
         }
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        event.getPlayer().discoverRecipe(NamespacedKey.minecraft("redeemables"));
     }
 
     @EventHandler
