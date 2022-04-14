@@ -1,11 +1,12 @@
 package me.ayresia.smpcore.smpcore;
 
+import me.ayresia.smpcore.smpcore.events.PlayerListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SmpCore extends JavaPlugin {
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
     }
 
     @Override
