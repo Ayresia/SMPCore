@@ -25,10 +25,6 @@ public class Heart {
         plugin.getServer().addRecipe(getRecipe());
     }
 
-    public ItemStack getItem() {
-        return item;
-    }
-
     public ItemMeta getItemMeta(ItemStack item) {
         ItemMeta meta = item.getItemMeta();
 
